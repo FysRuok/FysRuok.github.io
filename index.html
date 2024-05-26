@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8" />
+  <!--下面這行是標題-->
+  <title>支出表</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!--下面這行是縮圖，可以換網址-->
+  <!-- <link href="https://Edit-Mr.github.io/code/sabooo/thumbnail.png" rel="icon" type="image/x-icon" /> -->
+  <link rel="stylesheet" type="text/css" href="https://Edit-Mr.github.io/css/Animate.css" media="screen" />
+  <!--下面這行是主題顏色，可以自由更換（支援HEX）-->
+  <meta name="theme-color" content="orange" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <!--下面這些是樣式，可以自由更換顏色之類的-->
+  <style>
+    @import url(https://fonts.googleapis.com/earlyaccess/cwtexyen.css);
+
+    body {
+      font-family: 'Arial', 'cwTeXYen', '微軟正黑體';
+      background-color: #fee5bd;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 10px;
+      padding-right: 10px;
+      font-size: 25px;
+    }
+
+    h2 {
+      font-size: 23px;
+      margin: 0;
+      text-align: center;
+      font-weight: 150;
+      color: #e69137;
+      animation: fadeIn;
+      animation-duration: 1.5s;
+      animate-delay: 0.9s;
+    }
+
+    h1 {
+      font-size: 35px;
+      margin: 20px 0 0 0;
+      text-align: center;
+      size: 30px;
+      color: #351c75;
+      animation: zoomIn;
+      animation-duration: 1s;
+    }
+
+    li {
+      border-radius: 3px;
+      padding: 25px 30px;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 25px;
+    }
+
+    .responsive-table .table-header,
+    .table-note {
+      background-color: #f9a756;
+      font-size: 30px;
+      margin-top: 0px;
+      padding: 25px 30px 25px 30px;
+      animation: slideInUp;
+      animation-duration: 1.5s;
+    }
+
+    .table-note {
+      font-size: 20px;
+      display: none;
+    }
+
+    .responsive-table {
+      margin: 0;
+      padding: 0;
+    }
+
+    .responsive-table .table-row {
+      background-color: #fff;
+      box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.1);
+      animation: backInLeft;
+      animation-duration: 1.5s;
+    }
+    .table-row {
+    }
+
+    @media all and (max-width: 767px) {
+      .responsive-table .table-header {
+        display: none;
+      }
+
+      .table-note {
+        display: block;
+      }
+
+      .responsive-table li {
+        display: block;
+      }
+
+      .responsive-table .col {
+        flex-basis: 100%;
+      }
+
+      .responsive-table .col {
+        display: flex;
+        padding: 10px 0;
+      }
+
+      .responsive-table .col:before {
+        color: #6c7a89;
+        padding-right: 10px;
+        content: attr(data-label);
+        flex-basis: 50%;
+        text-align: right;
+      }
+    }
+
+    .header {
+      width: 150px;
+      display: block;
+      margin: auto;
+      animation: slideInUp;
+      animation-duration: 1.5s;
+    }
+
+    .finished {
+      color: green;
+    }
+
+    p,
+    a {
+      text-align: center;
+      font-size: 15px;
+      color: #6c7a89;
+      text-decoration: none;
+      animation: fadeIn;
+      animation-duration: 1.5s;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <ul class="responsive-table">
+      資料載入中
+    </ul>
+  </div>
+  <script>
+    //這串改成後端，這邊可用google部署的網頁應用程式
+    const ID = '';
+    let requestURL = 'https://script.google.com/macros/s/' + ID + '/exec';
+
+    // fetch(requestURL, {
+    //   crossDomain: true,
+    //   url: requestURL,
+    //   method: 'GET',
+    // })
+    //   .then((res) => {
+    //     if (res.status === 200) {
+    //       console.log(res); //拿到的是完整的響應報文，需要用fetch的.json()去獲取嚮應體
+    //       // res.json() 可以用来读取json格式的数据
+    //       return res.text(); //會是一個promise對象，需要再拿一個then去取結果
+    //     } else {
+    //       // 老師說：拋錯誤，最後拿一個catch統一處理就好，當項目越來越複雜，異常處理的機制很重要且常用。
+    //       throw new Error('加载失败！');
+    //     }
+    //   })
+    //   .then((res) => {
+    //     console.log('載入成功');
+    //     $('p').addClass('animate_animated', 'animate_fadeOut'); //動畫
+    //     $('.responsive-table').html(res); //用表格取代.responsive-table
+    //   });
+  </script>
+</body>
